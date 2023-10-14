@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using DesafioDotnet_balta.Service;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using Repository;
@@ -18,7 +20,9 @@ namespace DesafioDotnet_balta.Controllers
             _userRepository = repos;
                 
         }
-        [HttpPost]
+
+        [Authorize]
+        [HttpPost("/CadastroUsuario")]
         [ProducesResponseType(typeof(UserModel), StatusCodes.Status201Created)]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
@@ -45,5 +49,32 @@ namespace DesafioDotnet_balta.Controllers
             }
 
         }
+        [HttpPost("/Login")]
+        [ProducesResponseType(typeof(UserModel), StatusCodes.Status201Created)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
+        public async Task<ActionResult<dynamic>> AuthenticateAsync(UserModel user)
+        {
+            try
+            {
+                var person = _userRepository.Get(user.Email, user.Password);
+                if (person == null) return NotFound("Usuário e/ou Senha inválido.");
+
+                var token = TokenService.Generate(person);
+
+                return token;
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+
+
+        }
+
     }
 }

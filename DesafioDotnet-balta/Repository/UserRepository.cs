@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Models;
 using Repository.Context;
 using Repository.Interface;
 using System;
@@ -16,7 +17,11 @@ namespace Repository
            
         }
 
-       
+        public UserModel Get(string email,string password)
+        { 
+            return  _context.USER.Where(x => x.Email == email && x.Password == password).FirstOrDefault();        
+        
+        }
 
     }
 }

@@ -16,6 +16,8 @@ namespace Repository.Context
         }
         
         public DbSet<UserModel> USER { get; set; }
+        public DbSet<LocalityModel> IBGE { get; set; }
+
     }
 
 }

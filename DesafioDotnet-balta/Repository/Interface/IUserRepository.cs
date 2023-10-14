@@ -9,5 +9,6 @@ namespace Repository.Interface
 {
     public interface IUserRepository : IRepository<UserModel>
     {
+         UserModel Get(string email, string password);
     }
 }

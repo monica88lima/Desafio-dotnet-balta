@@ -4,6 +4,7 @@ using Repository.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,7 +33,12 @@ namespace Repository
         {
             _context.Set<T>().Remove(entity);
         }
+        public IQueryable<T> Get()
+        {
+            return _context.Set<T>().AsNoTracking();
+        }
 
+       
         public void Dispose()
         {
             _context.Dispose();
