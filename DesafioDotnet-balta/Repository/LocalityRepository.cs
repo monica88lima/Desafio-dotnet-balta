@@ -24,6 +24,7 @@ namespace Repository
             return await _context.Set<LocalityModel>().Where(predicate).ToListAsync();
         }
 
+        
 
 
     }

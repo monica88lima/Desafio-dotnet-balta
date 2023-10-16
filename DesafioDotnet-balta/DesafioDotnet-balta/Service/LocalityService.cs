@@ -14,7 +14,13 @@ namespace DesafioDotnet_balta.Service
             {
                local.City = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(local.City);          
             }
-            //local.City = char.ToUpper(local.City[0]) + local.City.Substring(1);
+           
+            return local;
+        }
+
+        public static LocalityModel AlterDate(LocalityModel local)
+        {
+            local.UpdateDate = DateTime.Now;
 
             return local;
         }

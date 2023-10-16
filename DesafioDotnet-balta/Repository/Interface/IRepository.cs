@@ -14,6 +14,7 @@ namespace Repository.Interface
         void Update(T entity);
         void Delete(T entity);
         IQueryable<T> Get();
+        Task<T> GetById(Expression<Func<T, bool>> predicate);
         Task Commit();
     }
 }

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Models
+namespace DesafioDotnet_balta.DTOs
 {
-    public class LocalityModel
+    public class LocalityDTO
     {
         [Key]
         [Required(ErrorMessage = "Campo Obrigatório")]
@@ -23,7 +18,6 @@ namespace Models
         [MinLength(2)]
         [Required(ErrorMessage = "Campo Obrigatório")]
         public string City { get; set; }
-        public DateTime CreationDate { get; set; } = DateTime.Now;
-        public DateTime? UpdateDate { get; set; } 
+        
     }
 }

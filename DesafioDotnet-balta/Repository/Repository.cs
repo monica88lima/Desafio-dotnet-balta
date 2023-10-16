@@ -37,8 +37,11 @@ namespace Repository
         {
             return _context.Set<T>().AsNoTracking();
         }
+        public async Task<T> GetById(Expression<Func<T, bool>> predicate)
+        {
+            return await _context.Set<T>().SingleOrDefaultAsync(predicate);
+        }
 
-       
         public void Dispose()
         {
             _context.Dispose();

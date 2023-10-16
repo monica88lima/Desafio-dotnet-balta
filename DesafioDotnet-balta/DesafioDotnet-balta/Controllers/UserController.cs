@@ -1,4 +1,7 @@
-﻿using DesafioDotnet_balta.Service;
+﻿using Asp.Versioning;
+using AutoMapper;
+using DesafioDotnet_balta.DTOs;
+using DesafioDotnet_balta.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -8,25 +11,29 @@ using Repository.Interface;
 
 namespace DesafioDotnet_balta.Controllers
 {
+    
+    [ApiVersion("1.0")]
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
+        protected readonly IMapper _mapper;
 
-        public UserController(IUserRepository repos)
+        public UserController(IUserRepository repos, IMapper mapper)
         {
             _userRepository = repos;
-                
+            _mapper=mapper;
         }
 
+        
         [Authorize]
         [HttpPost("/CadastroUsuario")]
-        [ProducesResponseType(typeof(UserModel), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(UserRegisterDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
-        public async Task<ActionResult> Save(UserModel user)
+        public async Task<ActionResult> Save(UserRegisterDTO user)
         {
             try
             {
@@ -35,7 +42,8 @@ namespace DesafioDotnet_balta.Controllers
                 {
                     return BadRequest();
                 }
-                _userRepository.Add(user);
+                var userModel = _mapper.Map<UserModel>(user);
+                _userRepository.Add(userModel);
                 await _userRepository.Commit();
 
                
@@ -45,18 +53,19 @@ namespace DesafioDotnet_balta.Controllers
             catch (Exception)
             {
 
-                return StatusCode(StatusCodes.Status500InternalServerError);
+                return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro na executação da sua solicitação!");
             }
 
         }
         [HttpPost("/Login")]
-        [ProducesResponseType(typeof(UserModel), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(UserLoginDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
-        public async Task<ActionResult<dynamic>> AuthenticateAsync(UserModel user)
+        public async Task<ActionResult<dynamic>> AuthenticateAsync(UserLoginDTO user)
         {
             try
             {
+                
                 var person = _userRepository.Get(user.Email, user.Password);
                 if (person == null) return NotFound("Usuário e/ou Senha inválido.");
 
@@ -69,7 +78,7 @@ namespace DesafioDotnet_balta.Controllers
             catch (Exception)
             {
 
-                throw;
+                return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro na executação da sua solicitação!");
             }
             
 
