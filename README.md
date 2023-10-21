@@ -32,7 +32,7 @@
 
 
 
-:bulb:#-[Pacotes e Bibliotecas](#Pacotes e Bibliotecas)
+:bulb:-[Pacotes e Bibliotecas](#Pacotes e Bibliotecas)
 
 net7.0;
 
