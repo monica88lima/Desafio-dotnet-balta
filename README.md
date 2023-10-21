@@ -6,7 +6,7 @@ Este exercicio apresentou três níveis de entrega, que os participantes poderia
 
 Neste etapa escolhi o perfil de Junior para realizar o proposto.
 
-Desafio: <a href ="https://baltaio.blob.core.windows.net/temp/desafio-dotnet/01-sobre.pdf">
+ <a href="(https://baltaio.blob.core.windows.net/temp/desafio-dotnet/01-sobre.pdf)">🔗Desafio</a>
 
 :heavy_check_mark:Descrição do Projeto
 
@@ -95,9 +95,9 @@ GO
 
 
 
-[![Alt text] Configurar a string de conexão no arquivo appsettings.json e Configurar a PrivateKey do arquivo Configuration como Secrets]
+![Alt text] Configurar a string de conexão no arquivo appsettings.json e Configurar a PrivateKey do arquivo Configuration como Secrets
 
-Guia para configuração da Secrets: <a href ="https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows">
+ <a href="(https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows)">🔗Guia para configuração da Secrets:</a>
 
 
 :bulb:-[Pacotes](#Pacotes)
