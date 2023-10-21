@@ -7,8 +7,7 @@ Este exercicio apresentou três níveis de entrega, que os participantes poderia
 Neste etapa escolhi o perfil de Júnior para realizar o proposto.
 
  <a href=“[http://exemplo.com/](https://baltaio.blob.core.windows.net/temp/desafio-dotnet/01-sobre.pdf)“>Orientações do Desafio</a>
-
-* [Descrição do Projeto](#descrição-do-projeto)
+# :bookmark_tabs: Descrição do Projeto
 
 Dentro do perfil escolhido [Júnior] 
 
@@ -29,7 +28,7 @@ Dentro do perfil escolhido [Júnior]
 - [x] Padronização
 - [x] Documentação (Swagger)
 
-* [Tecnologias utilizadas](#tecnologias-utilizadas)
+# :triangular_flag_on_post: Tecnologias utilizadas
 
  <ul>
   <li>.Net 7.0 </li>
@@ -41,13 +40,15 @@ Dentro do perfil escolhido [Júnior]
    
 
 * [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
+  
 A API dispõe do serviço de Cadastrar usuário, permitindo que este utilize após login os serviços de:
 Cadastro de Localidade conforme perfil do IBGE;
 Consulta a todos os registro de localidade, além de consultas específicas por ID, Cidade e Sigla do Estado;
 Alteração de Cadastro da Localidade;
 Remoçao de Registro;
   
-* [Acesso ao Projeto](#acesso-ao-projeto)
+
+  
 # 📁 Acesso ao projeto
 
 **A API esta disponivel em: **
@@ -106,8 +107,7 @@ GO
 
 
 
-
-:bulb:-[Pacotes](#Pacotes)
+#:bulb:Pacotes
 
 net7.0;
 
