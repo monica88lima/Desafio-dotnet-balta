@@ -101,7 +101,7 @@ GO
 
 **Configurar a PrivateKey ca classe Configuration.cs, como Secrets**
 
-<https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows>Armazenamento seguro de segredos de aplicativos em desenvolvimento no ASP.NET Core
+[Armazenamento seguro de segredos de aplicativos em desenvolvimento no ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows)
 
 # :bulb: Pacotes
 
