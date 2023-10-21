@@ -6,7 +6,6 @@ Este exercicio apresentou três níveis de entrega, que os participantes poderia
 
 Neste etapa escolhi o perfil de Júnior para realizar o proposto.
 
- <a href=“[http://exemplo.com/](https://baltaio.blob.core.windows.net/temp/desafio-dotnet/01-sobre.pdf)“>Orientações do Desafio</a>
 # :bookmark_tabs: Descrição do Projeto
 
 Dentro do perfil escolhido [Júnior] 
@@ -38,17 +37,14 @@ Dentro do perfil escolhido [Júnior]
    
 </ul>
    
-
-* [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
+# :rocket: Funcionalidades do projeto
   
 A API dispõe do serviço de Cadastrar usuário, permitindo que este utilize após login os serviços de:
 Cadastro de Localidade conforme perfil do IBGE;
 Consulta a todos os registro de localidade, além de consultas específicas por ID, Cidade e Sigla do Estado;
 Alteração de Cadastro da Localidade;
 Remoçao de Registro;
-  
-
-  
+    
 # 📁 Acesso ao projeto
 
 **A API esta disponivel em: **
@@ -102,12 +98,12 @@ GO
    ```
 
 **Configurar a string de conexão no arquivo appsettings.json**
+
 **Configurar a PrivateKey ca classe Configuration.cs, como Secrets**
-  <a href=“https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows“>Armazenamento seguro de segredos de aplicativos em desenvolvimento no ASP.NET Core</a>
 
+[https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windo](Armazenamento seguro de segredos de aplicativos em desenvolvimento no ASP.NET Core)
 
-
-#:bulb:Pacotes
+# :bulb: Pacotes
 
 net7.0;
 
