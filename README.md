@@ -1,7 +1,7 @@
 # Desafio-dotnet-balta
 <h1 align="center">:computer: #Criação de API</h1>
 
-O desafio proposto pelo professor Balta, tinha como próposito a criação de uma API moldada por um repositorio que contém dados de cidades e estados.
+O desafio proposto pelo **Balta**, tinha como próposito a criação de uma API moldada por um repositorio que contém dados de cidades e estados.
 Este exercicio apresentou três níveis de entrega, que os participantes poderiam escolher de acordo com seu nível de Senioridade.
 
 Neste etapa escolhi o perfil de Júnior para realizar o proposto.
@@ -101,7 +101,7 @@ GO
 
 **Configurar a PrivateKey ca classe Configuration.cs, como Secrets**
 
-[https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windo](Armazenamento seguro de segredos de aplicativos em desenvolvimento no ASP.NET Core)
+<https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windo>(Armazenamento seguro de segredos de aplicativos em desenvolvimento no ASP.NET Core)
 
 # :bulb: Pacotes
 
