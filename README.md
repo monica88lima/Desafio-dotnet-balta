@@ -5,13 +5,18 @@
 
 :computer:-[Tecnologia](#tecnologia)
 
-<img loading ="Lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" width="40" height="40"/> <img loading ="Lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"width="40" height="40"/>
-
-
+ .Net 7.0
+  
 
 #:pushpin:-[Recursos](#recursos)
 
-<img loading ="Lazy"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg"width="40" height="40" /><img loading ="Lazy"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" width="40" height="40"/>
+<ul>
+ 
+   <li> C# </li>
+   <li> SQLServer </li>
+   <li> Azure </li>
+   
+</ul>
 
 
 :triangular_flag_on_post:-[Sobre](#Sobre)
