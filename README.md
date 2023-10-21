@@ -4,50 +4,57 @@
 O desafio proposto pelo professor Balta, tinha como próposito a criação de uma API moldada por um repositorio que contém dados de cidades e estados.
 Este exercicio apresentou três níveis de entrega, que os participantes poderiam escolher de acordo com seu nível de Senioridade.
 
-Neste etapa escolhi o perfil de Junior para realizar o proposto.
+Neste etapa escolhi o perfil de Júnior para realizar o proposto.
 
- <a href="(https://baltaio.blob.core.windows.net/temp/desafio-dotnet/01-sobre.pdf)">🔗Desafio</a>
+ <a href=“[http://exemplo.com/](https://baltaio.blob.core.windows.net/temp/desafio-dotnet/01-sobre.pdf)“>Orientações do Desafio</a>
 
-:heavy_check_mark:Descrição do Projeto
+* [Descrição do Projeto](#descrição-do-projeto)
 
 Dentro do perfil escolhido [Júnior] 
 
 ### DoD
 
 - Autenticação e Autorização
-      [x] Cadastro de E-mail e Senha
-      [x] Login (Token, JWT)
+- [x] Cadastro de E-mail e Senha
+- [x] Login (Token, JWT)
 
 - CRUD de Localidade
-     [x] Código, Estado, Cidade (Id, City, State)
-	 [x] Pesquisa por cidade
-     [x] Pesquisa por estado
-     [x] Pesquisa por código (IBGE)
+- [x] Código, Estado, Cidade (Id, City, State)
+- [x] Pesquisa por cidade
+- [x] Pesquisa por estado
+- [x] Pesquisa por código (IBGE)
 	 
 - Boas práticas da API
-     [x] Versionamento
-     [x] Padronização
-     [x] Documentação (Swagger)
+- [x] Versionamento
+- [x] Padronização
+- [x] Documentação (Swagger)
 
-:computer:-[Tecnologia](#tecnologia)
+* [Tecnologias utilizadas](#tecnologias-utilizadas)
 
- .Net 7.0
-   
-
-#:pushpin:-[Recursos](#recursos)
-
-<ul>
- 
+ <ul>
+  <li>.Net 7.0 </li>
    <li> C# </li>
    <li> SQLServer </li>
    <li> Azure </li>
    
 </ul>
+   
 
+* [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
+A API dispõe do serviço de Cadastrar usuário, permitindo que este utilize após login os serviços de:
+Cadastro de Localidade conforme perfil do IBGE;
+Consulta a todos os registro de localidade, além de consultas específicas por ID, Cidade e Sigla do Estado;
+Alteração de Cadastro da Localidade;
+Remoçao de Registro;
+  
+* [Acesso ao Projeto](#acesso-ao-projeto)
+# 📁 Acesso ao projeto
 
-:file_folder:Como Usar
+**A API esta disponivel em: **
 
-Criando Banco de Dados
+# 🛠️ Para abrir e rodar o projeto, é necessario:
+
+**Criar Banco de Dados**
 
    ```bash
    Create database [nomeDoBanco]
@@ -93,11 +100,11 @@ GO
     
    ```
 
+**Configurar a string de conexão no arquivo appsettings.json**
+**Configurar a PrivateKey ca classe Configuration.cs, como Secrets**
+  <a href=“https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows“>Armazenamento seguro de segredos de aplicativos em desenvolvimento no ASP.NET Core</a>
 
 
-![Alt text] Configurar a string de conexão no arquivo appsettings.json e Configurar a PrivateKey do arquivo Configuration como Secrets
-
- <a href="(https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows)">🔗Guia para configuração da Secrets:</a>
 
 
 :bulb:-[Pacotes](#Pacotes)
