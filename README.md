@@ -51,12 +51,15 @@ Remoçao de Registro;
 
 # 🛠️ Para abrir e rodar o projeto, é necessario:
 
-**Criar Banco de Dados e tabelas 'User' e 'IBGE'**
+**Criar Banco de Dados**
+
 - Rodar o script abaixo:
 
-   ```bash
+  ```bash
    Create database [nomeDoBanco]
-
+  ```
+ **Criar as tabelas 'User' e 'IBGE'****
+```
 USE [nomeDoBanco]
 
 GO
@@ -95,8 +98,12 @@ CREATE TABLE [dbo].[IBGE](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+        ```
    
- ```
+
+
+```
+
 
 
 
