@@ -5,9 +5,11 @@ O desafio proposto pelo professor Balta, tinha como próposito a criação de um
 Este exercicio apresentou três níveis de entrega, que os participantes poderiam escolher de acordo com seu nível de Senioridade.
 
 Neste etapa escolhi o perfil de Junior para realizar o proposto.
+
 Desafio: <a href ="https://baltaio.blob.core.windows.net/temp/desafio-dotnet/01-sobre.pdf">
 
 :heavy_check_mark:Descrição do Projeto
+
 Dentro do perfil escolhido [Júnior] 
 
 ### DoD
@@ -93,11 +95,9 @@ GO
 
 
 
-[![Alt text] Configurar a string de conexão no arquivo appsettings.json e Configurar a PrivateKey do arquivo Configuration como Secrets
+[![Alt text] Configurar a string de conexão no arquivo appsettings.json e Configurar a PrivateKey do arquivo Configuration como Secrets]
 
 Guia para configuração da Secrets: <a href ="https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows">
-
-
 
 
 :bulb:-[Pacotes](#Pacotes)
