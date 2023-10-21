@@ -17,6 +17,7 @@ namespace DesafioDotnet_balta.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("Application/json")]
+    [Consumes("application/json")]
     public class LocalityController : ControllerBase
     {
         protected readonly ILocalityRepository _localityRepository;
@@ -29,8 +30,14 @@ namespace DesafioDotnet_balta.Controllers
         }
 
 
-                
+        /// <summary>
+        /// Apresenta todos os registros de localidades cadastrados
+        /// </summary>
+        /// <returns>Retorna uma lista com todos os Registros</returns>        
         [HttpGet("/Consulta-Todos")]
+        [ProducesResponseType(typeof(LocalityDTO), StatusCodes.Status200OK)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
         public async Task<ActionResult<IEnumerable<LocalityDTO>>> GetAll()
         {
             try
@@ -42,7 +49,7 @@ namespace DesafioDotnet_balta.Controllers
                     return NotFound("Não há registros Cadastrados!");
                 }
                 var localitiesDto = _mapper.Map<List<LocalityDTO>>(localities);
-                return (localitiesDto);
+                return Ok(localitiesDto);
 
             }
             catch (Exception)
@@ -50,9 +57,14 @@ namespace DesafioDotnet_balta.Controllers
 
                 return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro na executação da sua solicitação!");
             }
-               
+
         }
-        [HttpGet("/Consulta-ID", Name = "ObterLocalidade")]
+        /// <summary>
+        /// Obtém um registro a partir do ID da localidade conforme cadastro do IBGE informado
+        /// </summary>
+        /// <param name="id">Digite o ID de acordo com o cadastro do IBGE</param>
+        /// <returns>Retorna a localidade correspondente ao ID informado, caso não localizado o retorno informara o ID pesquisado e a mensagem de não localizada.</returns>
+        [HttpGet("/Consulta-ID/{id}", Name = "ObterLocalidade")]
         [ProducesResponseType(typeof(LocalityDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
@@ -76,8 +88,12 @@ namespace DesafioDotnet_balta.Controllers
             }
 
         }
-
-        [HttpGet("/Consulta-Cidade")]
+        /// <summary>
+        /// Retorna uma lista com as localidades, onde o nome da cidade contenham de forma parcial ou integral o campo digitado
+        /// </summary>
+        /// <param name="city">Digite o nome da Cidade</param>
+        /// <returns>Caso sejam localizados registros com o nome indicado, será apresentado uma lista. Caso de nenhum registro será informado que o nome digitado não contém nenhum registro no Banco de Dados. Caso o valor digitado contenha menos de 3 caracteres uma mensagem informado será apresentada.</returns>
+        [HttpGet("/Consulta-Cidade/{city}")]
         [ProducesResponseType(typeof(LocalityDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
@@ -106,13 +122,17 @@ namespace DesafioDotnet_balta.Controllers
             }
 
         }
-       
+        /// <summary>
+        /// Apresenta uma lista com todos os registro que façam parte do Estado informado
+        /// </summary>
+        /// <param name="state">Digite a sigla referente ao Estado</param>
+        /// <returns>Caso sejam localizados registros com a sigla do Estado informado, será apresentado uma lista.</returns>
 
-        [HttpGet("/Consulta-SiglaEstado")]
+        [HttpGet("/Consulta-SiglaEstado/{state}")]
         [ProducesResponseType(typeof(LocalityDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public  async Task<ActionResult<IEnumerable<LocalityDTO>>> GetState(string state)
+        public async Task<ActionResult<IEnumerable<LocalityDTO>>> GetState(string state)
         {
             try
             {
@@ -125,13 +145,18 @@ namespace DesafioDotnet_balta.Controllers
                 var localitiesDto = _mapper.Map<List<LocalityDTO>>(local);
                 return Ok(localitiesDto);
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
                 return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro na executação da sua solicitação!");
             }
 
         }
+        /// <summary>
+        /// Cadastra Localidade
+        /// </summary>
+        /// <param name="locality"></param>
+        /// <returns>Retorna objeto cadastrado</returns>
         [HttpPost("/Cadastro-Localidade")]
         [ProducesResponseType(typeof(LocalityDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(400)]
@@ -153,17 +178,23 @@ namespace DesafioDotnet_balta.Controllers
 
 
                 return new CreatedAtRouteResult("ObterLocalidade",
-                    new { id = local.Id }, locality); 
-                    
+                    new { id = local.Id }, locality);
+
             }
             catch (Exception)
             {
 
-                return StatusCode(StatusCodes.Status500InternalServerError,"Ocorreu um erro na executação da sua solicitação!");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro na executação da sua solicitação!");
             }
 
         }
-        [HttpPut("/Alterar-Localidade")]
+        /// <summary>
+        /// Altera os dados de uma localidade
+        /// </summary>
+        /// <param name="id">Id do IBGE </param>
+        /// <param name="locality">Dados da Localidade</param>
+        /// <returns>Retorna a localidade alterada</returns>
+        [HttpPut("/Alterar-Localidade/{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
@@ -182,9 +213,10 @@ namespace DesafioDotnet_balta.Controllers
                 _localityRepository.Update(local);
                 await _localityRepository.Commit();
 
+                locality.State.ToUpper();
                 return Ok(locality);
             }
-            catch (Exception e)
+            catch (Exception )
             {
 
                 return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro na executação da sua solicitação!");
@@ -192,8 +224,12 @@ namespace DesafioDotnet_balta.Controllers
 
 
         }
-        [Authorize]
-        [HttpDelete("/Deletar-Localidade")]
+        /// <summary>
+        /// Deleta um registro da Localidade
+        /// </summary>
+        /// <param name="id">Id do IBGE Cadastrado</param>
+        /// <returns>Retorna a localidade que foi excluida</returns>
+        [HttpDelete("/Deletar-Localidade/{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]

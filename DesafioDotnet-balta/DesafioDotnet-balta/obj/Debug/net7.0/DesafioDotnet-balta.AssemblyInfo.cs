@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("1f96a4d8-7c7d-4ef5-84f1-4f8325f3d7de")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("DesafioDotnet-balta")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

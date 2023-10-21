@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DesafioDotnet-balta</name>
+    </assembly>
+    <members>
+        <member name="M:DesafioDotnet_balta.Controllers.LocalityController.GetAll">
+            <summary>
+            Apresenta todos os registros de localidades cadastrados
+            </summary>
+            <returns>Retorna uma lista com todos os Registros</returns>        
+        </member>
+        <member name="M:DesafioDotnet_balta.Controllers.LocalityController.GetId(System.String)">
+            <summary>
+            Obtém um registro a partir do ID da localidade conforme cadastro do IBGE informado
+            </summary>
+            <param name="id">Digite o ID de acordo com o cadastro do IBGE</param>
+            <returns>Retorna a localidade correspondente ao ID informado, caso não localizado o retorno informara o ID pesquisado e a mensagem de não localizada.</returns>
+        </member>
+        <member name="M:DesafioDotnet_balta.Controllers.LocalityController.GetCity(System.String)">
+            <summary>
+            Retorna uma lista com as localidades, onde o nome da cidade contenham de forma parcial ou integral o campo digitado
+            </summary>
+            <param name="city">Digite o nome da Cidade</param>
+            <returns>Caso sejam localizados registros com o nome indicado, será apresentado uma lista. Caso de nenhum registro será informado que o nome digitado não contém nenhum registro no Banco de Dados. Caso o valor digitado contenha menos de 3 caracteres uma mensagem informado será apresentada.</returns>
+        </member>
+        <member name="M:DesafioDotnet_balta.Controllers.LocalityController.GetState(System.String)">
+            <summary>
+            Apresenta uma lista com todos os registro que façam parte do Estado informado
+            </summary>
+            <param name="state">Digite a sigla referente ao Estado</param>
+            <returns>Caso sejam localizados registros com a sigla do Estado informado, será apresentado uma lista.</returns>
+        </member>
+        <member name="M:DesafioDotnet_balta.Controllers.LocalityController.Save(DesafioDotnet_balta.DTOs.LocalityDTO)">
+            <summary>
+            Cadastra Localidade
+            </summary>
+            <param name="locality"></param>
+            <returns>Retorna objeto cadastrado</returns>
+        </member>
+        <member name="M:DesafioDotnet_balta.Controllers.LocalityController.Update(System.String,DesafioDotnet_balta.DTOs.LocalityDTO)">
+            <summary>
+            Altera os dados de uma localidade
+            </summary>
+            <param name="id">Id do IBGE </param>
+            <param name="locality">Dados da Localidade</param>
+            <returns>Retorna a localidade alterada</returns>
+        </member>
+        <member name="M:DesafioDotnet_balta.Controllers.LocalityController.Delete(System.String)">
+            <summary>
+            Deleta um registro da Localidade
+            </summary>
+            <param name="id">Id do IBGE Cadastrado</param>
+            <returns>Retorna a localidade que foi excluida</returns>
+        </member>
+        <member name="M:DesafioDotnet_balta.Controllers.UserController.Save(DesafioDotnet_balta.DTOs.UserRegisterDTO)">
+            <summary>
+            Registro Usuario
+            </summary>
+            <param name="user"></param>
+            <returns>Retorna informações do cadastro registrado</returns>
+        </member>
+        <member name="M:DesafioDotnet_balta.Controllers.UserController.AuthenticateAsync(DesafioDotnet_balta.DTOs.UserLoginDTO)">
+            <summary>
+            Valida o login e retorna o token de autenticação
+            </summary>
+            <param name="user"> Informar os campos de Email e Senha Cadastrados</param>
+            <returns>Retorna o token para autenticação</returns>
+        </member>
+    </members>
+</doc>

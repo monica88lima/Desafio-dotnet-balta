@@ -27,8 +27,12 @@ namespace DesafioDotnet_balta.Controllers
             _mapper=mapper;
         }
 
+        /// <summary>
+        /// Registro Usuario
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>Retorna informações do cadastro registrado</returns>
         
-        [Authorize]
         [HttpPost("/CadastroUsuario")]
         [ProducesResponseType(typeof(UserRegisterDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(400)]
@@ -46,6 +50,7 @@ namespace DesafioDotnet_balta.Controllers
                 _userRepository.Add(userModel);
                 await _userRepository.Commit();
 
+                user.Password = "******";
                
 
                 return Ok(user);
@@ -57,6 +62,11 @@ namespace DesafioDotnet_balta.Controllers
             }
 
         }
+        /// <summary>
+        /// Valida o login e retorna o token de autenticação
+        /// </summary>
+        /// <param name="user"> Informar os campos de Email e Senha Cadastrados</param>
+        /// <returns>Retorna o token para autenticação</returns>
         [HttpPost("/Login")]
         [ProducesResponseType(typeof(UserLoginDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(400)]
