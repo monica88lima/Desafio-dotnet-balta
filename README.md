@@ -51,7 +51,8 @@ Remoçao de Registro;
 
 # 🛠️ Para abrir e rodar o projeto, é necessario:
 
-**Criar Banco de Dados**
+**Criar Banco de Dados e tabelas 'User' e 'IBGE'**
+- Rodar o script abaixo:
 
    ```bash
    Create database [nomeDoBanco]
@@ -97,10 +98,13 @@ GO
     
    ```
 
-**Configurar a string de conexão no arquivo appsettings.json**
 
-**Configurar a PrivateKey ca classe Configuration.cs, como Secrets**
+**Abrir solution com IDE (Visual Studio )ou Editor de código (Visual Studio Code) ou outro conforme preferência:**
+- Configurar a string de conexão com o banco de dados no arquivo appsettings.json
 
+
+**Para configuração do serviço de Autenticação da API, se faz necessário ajustar a configuração da propriedade PrivateKey, caminho: DesafioDotnet-balta\Configuration\Configuration.csConfiguration.cs**
+-Utilize o padrão de UserSecrets para configurar esta propriedade, orientações e passo a passo disponivel neste artigo: 
 [Armazenamento seguro de segredos de aplicativos em desenvolvimento no ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows)
 
 # :bulb: Pacotes
