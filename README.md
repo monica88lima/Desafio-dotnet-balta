@@ -47,7 +47,7 @@ Remoçao de Registro;
     
 # 📁 Acesso ao projeto
 
-**A API esta disponivel em: **
+**A API esta disponivel em: (https://desafiodotnet-balta20231021190144.azurewebsites.net/swagger/index.html)**
 
 # 🛠️ Para abrir e rodar o projeto, é necessario:
 
