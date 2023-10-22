@@ -45,7 +45,7 @@ A API dispõe do serviço de Cadastro usuário, permitindo que este utilize apó
  - Alteração de Cadastro da Localidade;
  - Remoção de Registro da localidade;
 
-* :triangular_flag_on_post: Clique aqui!
+* :triangular_flag_on_post: Clique na imagem!
  * [![Alt text](https://img.youtube.com/vi/GlYFicKvZfc/0.jpg)](https://youtu.be/GlYFicKvZfc)  
 # 📁 Acesso ao projeto
 
