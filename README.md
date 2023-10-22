@@ -39,12 +39,14 @@ Dentro do perfil escolhido [Júnior]
    
 # :rocket: Funcionalidades do projeto
   
-A API dispõe do serviço de Cadastrar usuário, permitindo que este utilize após login os serviços de:
-Cadastro de Localidade conforme perfil do IBGE;
-Consulta a todos os registro de localidade, além de consultas específicas por ID, Cidade e Sigla do Estado;
-Alteração de Cadastro da Localidade;
-Remoçao de Registro;
-    
+A API dispõe do serviço de Cadastro usuário, permitindo que este utilize após login utilize os serviços de:
+ - Cadastro de Localidade conforme perfil do IBGE;
+ - Consulta a todos os registro de localidade, além de consultas específicas por ID, Cidade e Sigla do Estado;
+ - Alteração de Cadastro da Localidade;
+ - Remoção de Registro da localidade;
+
+* :triangular_flag_on_post: Clique aqui!
+ * [![Alt text](https://img.youtube.com/vi/GlYFicKvZfc/0.jpg)](https://youtu.be/GlYFicKvZfc)  
 # 📁 Acesso ao projeto
 
 **A API esta disponivel em: (https://desafiodotnet-balta20231021190144.azurewebsites.net/swagger/index.html)**
